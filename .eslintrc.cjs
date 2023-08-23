@@ -1,12 +1,20 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react-hooks/recommended', 'airbnb', 'airbnb/hooks', 'airbnb-typescript', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'airbnb',
+    'airbnb/hooks',
+    'airbnb-typescript',
+    'prettier'
+  ],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: __dirname
   },
   plugins: ['react-refresh'],
   rules: {
@@ -17,8 +25,8 @@ module.exports = {
       'error',
       {
         props: true,
-        ignorePropertyModificationsFor: ['state'],
-      },
+        ignorePropertyModificationsFor: ['state']
+      }
     ],
     'import/extensions': [
       'error',
@@ -28,14 +36,14 @@ module.exports = {
         js: 'never',
         jsx: 'never',
         ts: 'never',
-        tsx: 'never',
-      },
-    ],
+        tsx: 'never'
+      }
+    ]
   },
   overrides: [
     {
       files: ['*.json'],
-      parser: 'jsonc-eslint-parser',
-    },
-  ],
-}
+      parser: 'jsonc-eslint-parser'
+    }
+  ]
+};
