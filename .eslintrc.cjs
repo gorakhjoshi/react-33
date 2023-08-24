@@ -4,11 +4,12 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
     'airbnb',
-    'airbnb/hooks',
     'airbnb-typescript',
-    'prettier'
+    'airbnb/hooks',
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
+    'plugin:tailwindcss/recommended'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
   parser: '@typescript-eslint/parser',
@@ -16,7 +17,7 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname
   },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'prettier', 'tailwindcss'],
   rules: {
     'import/prefer-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
