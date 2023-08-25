@@ -4,47 +4,15 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
-    'plugin:tailwindcss/recommended'
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname
-  },
-  plugins: ['react-refresh', 'prettier', 'tailwindcss'],
+  plugins: ['react-refresh'],
   rules: {
-    'import/prefer-default-export': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'react-hooks/exhaustive-deps': 'warn',
-    'no-param-reassign': [
-      'error',
-      {
-        props: true,
-        ignorePropertyModificationsFor: ['state']
-      }
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
     ],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        '': 'never',
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never'
-      }
-    ]
   },
-  overrides: [
-    {
-      files: ['*.json'],
-      parser: 'jsonc-eslint-parser'
-    }
-  ]
-};
+}
